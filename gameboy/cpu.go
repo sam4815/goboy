@@ -1,71 +1,31 @@
 package gameboy
 
-import (
-	"encoding/binary"
-	"log"
-)
-
 type CPU struct {
-	ProgramCounter byte
-	StackPointer   byte
+	Gameboy        *Gameboy
+	ProgramCounter uint16
+	StackPointer   uint16
 	Registers      Registers
+	Clocks         Clocks
 }
 
-type Registers struct {
-	A byte
-	B byte
-	C byte
-	D byte
-	E byte
-	H byte
-	L byte
-	F Flags
+type Clocks struct {
+	M int
+	T int
 }
 
-type Flags struct {
-	Zero      bool
-	Subtract  bool
-	HalfCarry bool
-	Carry     bool
+func (cpu CPU) Immediate8() uint8 {
+	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1)
 }
 
-func (flags Flags) Byte() byte {
-	flagByte := 0
-
-	if flags.Zero {
-		flagByte |= (1 << 7)
-	}
-	if flags.Subtract {
-		flagByte |= (1 << 6)
-	}
-	if flags.HalfCarry {
-		flagByte |= (1 << 5)
-	}
-	if flags.Carry {
-		flagByte |= (1 << 4)
-	}
-
-	return byte(flagByte)
+func (cpu CPU) Immediate16() uint16 {
+	return cpu.Gameboy.MMU.ReadWord(cpu.ProgramCounter + 1)
 }
 
-func (registers Registers) AF() uint16 {
-	return binary.LittleEndian.Uint16([]byte{registers.A, registers.F.Byte()})
-}
+func (cpu *CPU) Step() {
+	opcode := DecodeOpcode(cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter))
 
-func (registers Registers) BC() uint16 {
-	return binary.LittleEndian.Uint16([]byte{registers.B, registers.C})
-}
+	mTime, tTime := cpu.Execute(opcode)
 
-func (registers Registers) DE() uint16 {
-	return binary.LittleEndian.Uint16([]byte{registers.D, registers.E})
-}
-
-func (registers Registers) HL() uint16 {
-	return binary.LittleEndian.Uint16([]byte{registers.H, registers.L})
-}
-
-func (cpu *CPU) Step(memory *[]byte) {
-	instruction := (*memory)[cpu.ProgramCounter]
-
-	log.Print(instruction)
+	cpu.Clocks.M += mTime
+	cpu.Clocks.T += tTime
 }

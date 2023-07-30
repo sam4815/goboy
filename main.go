@@ -16,7 +16,7 @@ func main() {
 		log.Fatal("Error opening file: ", err)
 	}
 
-	gb := gameboy.Gameboy{Memory: bytes, CPU: gameboy.CPU{}}
+	gb := gameboy.New(bytes)
 
 	gb.Run()
 }
