@@ -5,34 +5,35 @@ type CPU struct {
 	ProgramCounter uint16
 	StackPointer   uint16
 	Registers      Registers
-	Clocks         Clocks
+	Cycles         int
+	Decoder        Decoder
 }
 
-type Clocks struct {
-	M int
-	T int
+func NewCPU() CPU {
+	return CPU{Decoder: NewDecoder()}
 }
 
-func (cpu *CPU) Immediate8() uint8 {
-	immediate8 := cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter)
-	cpu.ProgramCounter += 1
-
-	return immediate8
+func (cpu *CPU) CurrentByte() uint8 {
+	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter)
 }
 
-func (cpu *CPU) Immediate16() uint16 {
-	immediate16 := cpu.Gameboy.MMU.ReadWord(cpu.ProgramCounter)
-	cpu.ProgramCounter += 2
+func (cpu *CPU) ImmediateByte() uint8 {
+	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1)
+}
 
-	return immediate16
+func (cpu *CPU) ImmediateWord() uint16 {
+	return cpu.Gameboy.MMU.ReadWord(cpu.ProgramCounter + 1)
 }
 
 func (cpu *CPU) Step() {
-	opcode := DecodeOpcode(cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter))
-	cpu.ProgramCounter += 1
+	opcode := cpu.Decoder.DecodeUnprefixed(cpu.CurrentByte())
 
-	mTime, tTime := cpu.Execute(opcode)
+	if opcode.Mnemonic == "PREFIX" {
+		opcode = cpu.Decoder.DecodePrefixed(cpu.ImmediateByte())
+	}
 
-	cpu.Clocks.M += mTime
-	cpu.Clocks.T += tTime
+	cycleIndex := cpu.Execute(opcode)
+
+	cpu.ProgramCounter += opcode.Bytes
+	cpu.Cycles += int(opcode.Cycles[cycleIndex])
 }

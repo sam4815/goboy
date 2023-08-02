@@ -9,7 +9,7 @@ type Gameboy struct {
 func New(bytes []byte) Gameboy {
 	gameboy := Gameboy{
 		MMU:      NewMMU(bytes),
-		CPU:      CPU{},
+		CPU:      NewCPU(),
 		Metadata: ParseMetadata(bytes),
 	}
 	gameboy.CPU.Gameboy = &gameboy
@@ -17,8 +17,10 @@ func New(bytes []byte) Gameboy {
 	return gameboy
 }
 
-func (gameboy Gameboy) Run() {
-	// for {
-	gameboy.CPU.Step()
-	// }
+func (gameboy *Gameboy) Run() {
+	gameboy.CPU.ProgramCounter = 0x150
+
+	for i := 0; i < 100; i++ {
+		gameboy.CPU.Step()
+	}
 }

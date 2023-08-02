@@ -1,0 +1,12166 @@
+{
+	"unprefixed": {
+		"0x00": {
+			"mnemonic": "NOP",
+			"hex": "0x00",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x01": {
+			"mnemonic": "LD",
+			"hex": "0x01",
+			"bytes": 3,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": true
+				},
+				{
+					"name": "n16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x02": {
+			"mnemonic": "LD",
+			"hex": "0x02",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x03": {
+			"mnemonic": "INC",
+			"hex": "0x03",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x04": {
+			"mnemonic": "INC",
+			"hex": "0x04",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x05": {
+			"mnemonic": "DEC",
+			"hex": "0x05",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x06": {
+			"mnemonic": "LD",
+			"hex": "0x06",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x07": {
+			"mnemonic": "RLCA",
+			"hex": "0x07",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x08": {
+			"mnemonic": "LD",
+			"hex": "0x08",
+			"bytes": 3,
+			"cycles": [
+				20
+			],
+			"operands": [
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": false
+				},
+				{
+					"name": "SP",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x09": {
+			"mnemonic": "ADD",
+			"hex": "0x09",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "BC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x0A": {
+			"mnemonic": "LD",
+			"hex": "0x0A",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "BC",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x0B": {
+			"mnemonic": "DEC",
+			"hex": "0x0B",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x0C": {
+			"mnemonic": "INC",
+			"hex": "0x0C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x0D": {
+			"mnemonic": "DEC",
+			"hex": "0x0D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x0E": {
+			"mnemonic": "LD",
+			"hex": "0x0E",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x0F": {
+			"mnemonic": "RRCA",
+			"hex": "0x0F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x10": {
+			"mnemonic": "STOP",
+			"hex": "0x10",
+			"bytes": 2,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x11": {
+			"mnemonic": "LD",
+			"hex": "0x11",
+			"bytes": 3,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": true
+				},
+				{
+					"name": "n16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x12": {
+			"mnemonic": "LD",
+			"hex": "0x12",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x13": {
+			"mnemonic": "INC",
+			"hex": "0x13",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x14": {
+			"mnemonic": "INC",
+			"hex": "0x14",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x15": {
+			"mnemonic": "DEC",
+			"hex": "0x15",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x16": {
+			"mnemonic": "LD",
+			"hex": "0x16",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x17": {
+			"mnemonic": "RLA",
+			"hex": "0x17",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x18": {
+			"mnemonic": "JR",
+			"hex": "0x18",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x19": {
+			"mnemonic": "ADD",
+			"hex": "0x19",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "DE",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x1A": {
+			"mnemonic": "LD",
+			"hex": "0x1A",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "DE",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x1B": {
+			"mnemonic": "DEC",
+			"hex": "0x1B",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x1C": {
+			"mnemonic": "INC",
+			"hex": "0x1C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x1D": {
+			"mnemonic": "DEC",
+			"hex": "0x1D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x1E": {
+			"mnemonic": "LD",
+			"hex": "0x1E",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x1F": {
+			"mnemonic": "RRA",
+			"hex": "0x1F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x20": {
+			"mnemonic": "JR",
+			"hex": "0x20",
+			"bytes": 2,
+			"cycles": [
+				12,
+				8
+			],
+			"operands": [
+				{
+					"name": "NZ",
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x21": {
+			"mnemonic": "LD",
+			"hex": "0x21",
+			"bytes": 3,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "n16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x22": {
+			"mnemonic": "LD",
+			"hex": "0x22",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"increment": true,
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x23": {
+			"mnemonic": "INC",
+			"hex": "0x23",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x24": {
+			"mnemonic": "INC",
+			"hex": "0x24",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x25": {
+			"mnemonic": "DEC",
+			"hex": "0x25",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x26": {
+			"mnemonic": "LD",
+			"hex": "0x26",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x27": {
+			"mnemonic": "DAA",
+			"hex": "0x27",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "-",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x28": {
+			"mnemonic": "JR",
+			"hex": "0x28",
+			"bytes": 2,
+			"cycles": [
+				12,
+				8
+			],
+			"operands": [
+				{
+					"name": "Z",
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x29": {
+			"mnemonic": "ADD",
+			"hex": "0x29",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x2A": {
+			"mnemonic": "LD",
+			"hex": "0x2A",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"increment": true,
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x2B": {
+			"mnemonic": "DEC",
+			"hex": "0x2B",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x2C": {
+			"mnemonic": "INC",
+			"hex": "0x2C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x2D": {
+			"mnemonic": "DEC",
+			"hex": "0x2D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x2E": {
+			"mnemonic": "LD",
+			"hex": "0x2E",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x2F": {
+			"mnemonic": "CPL",
+			"hex": "0x2F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "1",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x30": {
+			"mnemonic": "JR",
+			"hex": "0x30",
+			"bytes": 2,
+			"cycles": [
+				12,
+				8
+			],
+			"operands": [
+				{
+					"name": "NC",
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x31": {
+			"mnemonic": "LD",
+			"hex": "0x31",
+			"bytes": 3,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "SP",
+					"immediate": true
+				},
+				{
+					"name": "n16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x32": {
+			"mnemonic": "LD",
+			"hex": "0x32",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"decrement": true,
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x33": {
+			"mnemonic": "INC",
+			"hex": "0x33",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "SP",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x34": {
+			"mnemonic": "INC",
+			"hex": "0x34",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x35": {
+			"mnemonic": "DEC",
+			"hex": "0x35",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x36": {
+			"mnemonic": "LD",
+			"hex": "0x36",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x37": {
+			"mnemonic": "SCF",
+			"hex": "0x37",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "0",
+				"C": "1"
+			}
+		},
+		"0x38": {
+			"mnemonic": "JR",
+			"hex": "0x38",
+			"bytes": 2,
+			"cycles": [
+				12,
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x39": {
+			"mnemonic": "ADD",
+			"hex": "0x39",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "SP",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x3A": {
+			"mnemonic": "LD",
+			"hex": "0x3A",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"decrement": true,
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x3B": {
+			"mnemonic": "DEC",
+			"hex": "0x3B",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "SP",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x3C": {
+			"mnemonic": "INC",
+			"hex": "0x3C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x3D": {
+			"mnemonic": "DEC",
+			"hex": "0x3D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0x3E": {
+			"mnemonic": "LD",
+			"hex": "0x3E",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x3F": {
+			"mnemonic": "CCF",
+			"hex": "0x3F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x40": {
+			"mnemonic": "LD",
+			"hex": "0x40",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x41": {
+			"mnemonic": "LD",
+			"hex": "0x41",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x42": {
+			"mnemonic": "LD",
+			"hex": "0x42",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x43": {
+			"mnemonic": "LD",
+			"hex": "0x43",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x44": {
+			"mnemonic": "LD",
+			"hex": "0x44",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x45": {
+			"mnemonic": "LD",
+			"hex": "0x45",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x46": {
+			"mnemonic": "LD",
+			"hex": "0x46",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x47": {
+			"mnemonic": "LD",
+			"hex": "0x47",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x48": {
+			"mnemonic": "LD",
+			"hex": "0x48",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x49": {
+			"mnemonic": "LD",
+			"hex": "0x49",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4A": {
+			"mnemonic": "LD",
+			"hex": "0x4A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4B": {
+			"mnemonic": "LD",
+			"hex": "0x4B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4C": {
+			"mnemonic": "LD",
+			"hex": "0x4C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4D": {
+			"mnemonic": "LD",
+			"hex": "0x4D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4E": {
+			"mnemonic": "LD",
+			"hex": "0x4E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x4F": {
+			"mnemonic": "LD",
+			"hex": "0x4F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x50": {
+			"mnemonic": "LD",
+			"hex": "0x50",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x51": {
+			"mnemonic": "LD",
+			"hex": "0x51",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x52": {
+			"mnemonic": "LD",
+			"hex": "0x52",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x53": {
+			"mnemonic": "LD",
+			"hex": "0x53",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x54": {
+			"mnemonic": "LD",
+			"hex": "0x54",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x55": {
+			"mnemonic": "LD",
+			"hex": "0x55",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x56": {
+			"mnemonic": "LD",
+			"hex": "0x56",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x57": {
+			"mnemonic": "LD",
+			"hex": "0x57",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x58": {
+			"mnemonic": "LD",
+			"hex": "0x58",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x59": {
+			"mnemonic": "LD",
+			"hex": "0x59",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5A": {
+			"mnemonic": "LD",
+			"hex": "0x5A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5B": {
+			"mnemonic": "LD",
+			"hex": "0x5B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5C": {
+			"mnemonic": "LD",
+			"hex": "0x5C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5D": {
+			"mnemonic": "LD",
+			"hex": "0x5D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5E": {
+			"mnemonic": "LD",
+			"hex": "0x5E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x5F": {
+			"mnemonic": "LD",
+			"hex": "0x5F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x60": {
+			"mnemonic": "LD",
+			"hex": "0x60",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x61": {
+			"mnemonic": "LD",
+			"hex": "0x61",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x62": {
+			"mnemonic": "LD",
+			"hex": "0x62",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x63": {
+			"mnemonic": "LD",
+			"hex": "0x63",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x64": {
+			"mnemonic": "LD",
+			"hex": "0x64",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x65": {
+			"mnemonic": "LD",
+			"hex": "0x65",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x66": {
+			"mnemonic": "LD",
+			"hex": "0x66",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x67": {
+			"mnemonic": "LD",
+			"hex": "0x67",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x68": {
+			"mnemonic": "LD",
+			"hex": "0x68",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x69": {
+			"mnemonic": "LD",
+			"hex": "0x69",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6A": {
+			"mnemonic": "LD",
+			"hex": "0x6A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6B": {
+			"mnemonic": "LD",
+			"hex": "0x6B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6C": {
+			"mnemonic": "LD",
+			"hex": "0x6C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6D": {
+			"mnemonic": "LD",
+			"hex": "0x6D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6E": {
+			"mnemonic": "LD",
+			"hex": "0x6E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x6F": {
+			"mnemonic": "LD",
+			"hex": "0x6F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x70": {
+			"mnemonic": "LD",
+			"hex": "0x70",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x71": {
+			"mnemonic": "LD",
+			"hex": "0x71",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x72": {
+			"mnemonic": "LD",
+			"hex": "0x72",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x73": {
+			"mnemonic": "LD",
+			"hex": "0x73",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x74": {
+			"mnemonic": "LD",
+			"hex": "0x74",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x75": {
+			"mnemonic": "LD",
+			"hex": "0x75",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x76": {
+			"mnemonic": "HALT",
+			"hex": "0x76",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x77": {
+			"mnemonic": "LD",
+			"hex": "0x77",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x78": {
+			"mnemonic": "LD",
+			"hex": "0x78",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x79": {
+			"mnemonic": "LD",
+			"hex": "0x79",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7A": {
+			"mnemonic": "LD",
+			"hex": "0x7A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7B": {
+			"mnemonic": "LD",
+			"hex": "0x7B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7C": {
+			"mnemonic": "LD",
+			"hex": "0x7C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7D": {
+			"mnemonic": "LD",
+			"hex": "0x7D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7E": {
+			"mnemonic": "LD",
+			"hex": "0x7E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x7F": {
+			"mnemonic": "LD",
+			"hex": "0x7F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x80": {
+			"mnemonic": "ADD",
+			"hex": "0x80",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x81": {
+			"mnemonic": "ADD",
+			"hex": "0x81",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x82": {
+			"mnemonic": "ADD",
+			"hex": "0x82",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x83": {
+			"mnemonic": "ADD",
+			"hex": "0x83",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x84": {
+			"mnemonic": "ADD",
+			"hex": "0x84",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x85": {
+			"mnemonic": "ADD",
+			"hex": "0x85",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x86": {
+			"mnemonic": "ADD",
+			"hex": "0x86",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x87": {
+			"mnemonic": "ADD",
+			"hex": "0x87",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x88": {
+			"mnemonic": "ADC",
+			"hex": "0x88",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x89": {
+			"mnemonic": "ADC",
+			"hex": "0x89",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8A": {
+			"mnemonic": "ADC",
+			"hex": "0x8A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8B": {
+			"mnemonic": "ADC",
+			"hex": "0x8B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8C": {
+			"mnemonic": "ADC",
+			"hex": "0x8C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8D": {
+			"mnemonic": "ADC",
+			"hex": "0x8D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8E": {
+			"mnemonic": "ADC",
+			"hex": "0x8E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x8F": {
+			"mnemonic": "ADC",
+			"hex": "0x8F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x90": {
+			"mnemonic": "SUB",
+			"hex": "0x90",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x91": {
+			"mnemonic": "SUB",
+			"hex": "0x91",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x92": {
+			"mnemonic": "SUB",
+			"hex": "0x92",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x93": {
+			"mnemonic": "SUB",
+			"hex": "0x93",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x94": {
+			"mnemonic": "SUB",
+			"hex": "0x94",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x95": {
+			"mnemonic": "SUB",
+			"hex": "0x95",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x96": {
+			"mnemonic": "SUB",
+			"hex": "0x96",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x97": {
+			"mnemonic": "SUB",
+			"hex": "0x97",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "1",
+				"N": "1",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x98": {
+			"mnemonic": "SBC",
+			"hex": "0x98",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x99": {
+			"mnemonic": "SBC",
+			"hex": "0x99",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9A": {
+			"mnemonic": "SBC",
+			"hex": "0x9A",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9B": {
+			"mnemonic": "SBC",
+			"hex": "0x9B",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9C": {
+			"mnemonic": "SBC",
+			"hex": "0x9C",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9D": {
+			"mnemonic": "SBC",
+			"hex": "0x9D",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9E": {
+			"mnemonic": "SBC",
+			"hex": "0x9E",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0x9F": {
+			"mnemonic": "SBC",
+			"hex": "0x9F",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "-"
+			}
+		},
+		"0xA0": {
+			"mnemonic": "AND",
+			"hex": "0xA0",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA1": {
+			"mnemonic": "AND",
+			"hex": "0xA1",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA2": {
+			"mnemonic": "AND",
+			"hex": "0xA2",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA3": {
+			"mnemonic": "AND",
+			"hex": "0xA3",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA4": {
+			"mnemonic": "AND",
+			"hex": "0xA4",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA5": {
+			"mnemonic": "AND",
+			"hex": "0xA5",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA6": {
+			"mnemonic": "AND",
+			"hex": "0xA6",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA7": {
+			"mnemonic": "AND",
+			"hex": "0xA7",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xA8": {
+			"mnemonic": "XOR",
+			"hex": "0xA8",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xA9": {
+			"mnemonic": "XOR",
+			"hex": "0xA9",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAA": {
+			"mnemonic": "XOR",
+			"hex": "0xAA",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAB": {
+			"mnemonic": "XOR",
+			"hex": "0xAB",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAC": {
+			"mnemonic": "XOR",
+			"hex": "0xAC",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAD": {
+			"mnemonic": "XOR",
+			"hex": "0xAD",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAE": {
+			"mnemonic": "XOR",
+			"hex": "0xAE",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xAF": {
+			"mnemonic": "XOR",
+			"hex": "0xAF",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "1",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB0": {
+			"mnemonic": "OR",
+			"hex": "0xB0",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB1": {
+			"mnemonic": "OR",
+			"hex": "0xB1",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB2": {
+			"mnemonic": "OR",
+			"hex": "0xB2",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB3": {
+			"mnemonic": "OR",
+			"hex": "0xB3",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB4": {
+			"mnemonic": "OR",
+			"hex": "0xB4",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB5": {
+			"mnemonic": "OR",
+			"hex": "0xB5",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB6": {
+			"mnemonic": "OR",
+			"hex": "0xB6",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB7": {
+			"mnemonic": "OR",
+			"hex": "0xB7",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xB8": {
+			"mnemonic": "CP",
+			"hex": "0xB8",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xB9": {
+			"mnemonic": "CP",
+			"hex": "0xB9",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBA": {
+			"mnemonic": "CP",
+			"hex": "0xBA",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBB": {
+			"mnemonic": "CP",
+			"hex": "0xBB",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBC": {
+			"mnemonic": "CP",
+			"hex": "0xBC",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBD": {
+			"mnemonic": "CP",
+			"hex": "0xBD",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBE": {
+			"mnemonic": "CP",
+			"hex": "0xBE",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xBF": {
+			"mnemonic": "CP",
+			"hex": "0xBF",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "1",
+				"N": "1",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xC0": {
+			"mnemonic": "RET",
+			"hex": "0xC0",
+			"bytes": 1,
+			"cycles": [
+				20,
+				8
+			],
+			"operands": [
+				{
+					"name": "NZ",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC1": {
+			"mnemonic": "POP",
+			"hex": "0xC1",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC2": {
+			"mnemonic": "JP",
+			"hex": "0xC2",
+			"bytes": 3,
+			"cycles": [
+				16,
+				12
+			],
+			"operands": [
+				{
+					"name": "NZ",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC3": {
+			"mnemonic": "JP",
+			"hex": "0xC3",
+			"bytes": 3,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC4": {
+			"mnemonic": "CALL",
+			"hex": "0xC4",
+			"bytes": 3,
+			"cycles": [
+				24,
+				12
+			],
+			"operands": [
+				{
+					"name": "NZ",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC5": {
+			"mnemonic": "PUSH",
+			"hex": "0xC5",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "BC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC6": {
+			"mnemonic": "ADD",
+			"hex": "0xC6",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xC7": {
+			"mnemonic": "RST",
+			"hex": "0xC7",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$00",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC8": {
+			"mnemonic": "RET",
+			"hex": "0xC8",
+			"bytes": 1,
+			"cycles": [
+				20,
+				8
+			],
+			"operands": [
+				{
+					"name": "Z",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC9": {
+			"mnemonic": "RET",
+			"hex": "0xC9",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCA": {
+			"mnemonic": "JP",
+			"hex": "0xCA",
+			"bytes": 3,
+			"cycles": [
+				16,
+				12
+			],
+			"operands": [
+				{
+					"name": "Z",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCB": {
+			"mnemonic": "PREFIX",
+			"hex": "0xCB",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCC": {
+			"mnemonic": "CALL",
+			"hex": "0xCC",
+			"bytes": 3,
+			"cycles": [
+				24,
+				12
+			],
+			"operands": [
+				{
+					"name": "Z",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCD": {
+			"mnemonic": "CALL",
+			"hex": "0xCD",
+			"bytes": 3,
+			"cycles": [
+				24
+			],
+			"operands": [
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCE": {
+			"mnemonic": "ADC",
+			"hex": "0xCE",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xCF": {
+			"mnemonic": "RST",
+			"hex": "0xCF",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$08",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD0": {
+			"mnemonic": "RET",
+			"hex": "0xD0",
+			"bytes": 1,
+			"cycles": [
+				20,
+				8
+			],
+			"operands": [
+				{
+					"name": "NC",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD1": {
+			"mnemonic": "POP",
+			"hex": "0xD1",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD2": {
+			"mnemonic": "JP",
+			"hex": "0xD2",
+			"bytes": 3,
+			"cycles": [
+				16,
+				12
+			],
+			"operands": [
+				{
+					"name": "NC",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD3": {
+			"mnemonic": "ILLEGAL_D3",
+			"hex": "0xD3",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD4": {
+			"mnemonic": "CALL",
+			"hex": "0xD4",
+			"bytes": 3,
+			"cycles": [
+				24,
+				12
+			],
+			"operands": [
+				{
+					"name": "NC",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD5": {
+			"mnemonic": "PUSH",
+			"hex": "0xD5",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "DE",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD6": {
+			"mnemonic": "SUB",
+			"hex": "0xD6",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xD7": {
+			"mnemonic": "RST",
+			"hex": "0xD7",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$10",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD8": {
+			"mnemonic": "RET",
+			"hex": "0xD8",
+			"bytes": 1,
+			"cycles": [
+				20,
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD9": {
+			"mnemonic": "RETI",
+			"hex": "0xD9",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDA": {
+			"mnemonic": "JP",
+			"hex": "0xDA",
+			"bytes": 3,
+			"cycles": [
+				16,
+				12
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDB": {
+			"mnemonic": "ILLEGAL_DB",
+			"hex": "0xDB",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDC": {
+			"mnemonic": "CALL",
+			"hex": "0xDC",
+			"bytes": 3,
+			"cycles": [
+				24,
+				12
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDD": {
+			"mnemonic": "ILLEGAL_DD",
+			"hex": "0xDD",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDE": {
+			"mnemonic": "SBC",
+			"hex": "0xDE",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xDF": {
+			"mnemonic": "RST",
+			"hex": "0xDF",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$18",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE0": {
+			"mnemonic": "LDH",
+			"hex": "0xE0",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "a8",
+					"bytes": 1,
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE1": {
+			"mnemonic": "POP",
+			"hex": "0xE1",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE2": {
+			"mnemonic": "LD",
+			"hex": "0xE2",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE3": {
+			"mnemonic": "ILLEGAL_E3",
+			"hex": "0xE3",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE4": {
+			"mnemonic": "ILLEGAL_E4",
+			"hex": "0xE4",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE5": {
+			"mnemonic": "PUSH",
+			"hex": "0xE5",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE6": {
+			"mnemonic": "AND",
+			"hex": "0xE6",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "0"
+			}
+		},
+		"0xE7": {
+			"mnemonic": "RST",
+			"hex": "0xE7",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$20",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE8": {
+			"mnemonic": "ADD",
+			"hex": "0xE8",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "SP",
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xE9": {
+			"mnemonic": "JP",
+			"hex": "0xE9",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEA": {
+			"mnemonic": "LD",
+			"hex": "0xEA",
+			"bytes": 3,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": false
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEB": {
+			"mnemonic": "ILLEGAL_EB",
+			"hex": "0xEB",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEC": {
+			"mnemonic": "ILLEGAL_EC",
+			"hex": "0xEC",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xED": {
+			"mnemonic": "ILLEGAL_ED",
+			"hex": "0xED",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEE": {
+			"mnemonic": "XOR",
+			"hex": "0xEE",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xEF": {
+			"mnemonic": "RST",
+			"hex": "0xEF",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$28",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF0": {
+			"mnemonic": "LDH",
+			"hex": "0xF0",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "a8",
+					"bytes": 1,
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF1": {
+			"mnemonic": "POP",
+			"hex": "0xF1",
+			"bytes": 1,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "AF",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "N",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xF2": {
+			"mnemonic": "LD",
+			"hex": "0xF2",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF3": {
+			"mnemonic": "DI",
+			"hex": "0xF3",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF4": {
+			"mnemonic": "ILLEGAL_F4",
+			"hex": "0xF4",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF5": {
+			"mnemonic": "PUSH",
+			"hex": "0xF5",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "AF",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF6": {
+			"mnemonic": "OR",
+			"hex": "0xF6",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0xF7": {
+			"mnemonic": "RST",
+			"hex": "0xF7",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$30",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF8": {
+			"mnemonic": "LD",
+			"hex": "0xF8",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": true
+				},
+				{
+					"name": "SP",
+					"increment": true,
+					"immediate": true
+				},
+				{
+					"name": "e8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "0",
+				"N": "0",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xF9": {
+			"mnemonic": "LD",
+			"hex": "0xF9",
+			"bytes": 1,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "SP",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFA": {
+			"mnemonic": "LD",
+			"hex": "0xFA",
+			"bytes": 3,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "a16",
+					"bytes": 2,
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFB": {
+			"mnemonic": "EI",
+			"hex": "0xFB",
+			"bytes": 1,
+			"cycles": [
+				4
+			],
+			"operands": [],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFC": {
+			"mnemonic": "ILLEGAL_FC",
+			"hex": "0xFC",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFD": {
+			"mnemonic": "ILLEGAL_FD",
+			"hex": "0xFD",
+			"bytes": 1,
+			"cycles": [ 4 ],
+			"operands": [ ],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFE": {
+			"mnemonic": "CP",
+			"hex": "0xFE",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				},
+				{
+					"name": "n8",
+					"bytes": 1,
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "1",
+				"H": "H",
+				"C": "C"
+			}
+		},
+		"0xFF": {
+			"mnemonic": "RST",
+			"hex": "0xFF",
+			"bytes": 1,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "$38",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		}
+	},
+	"cbprefixed": {
+		"0x00": {
+			"mnemonic": "RLC",
+			"hex": "0x00",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x01": {
+			"mnemonic": "RLC",
+			"hex": "0x01",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x02": {
+			"mnemonic": "RLC",
+			"hex": "0x02",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x03": {
+			"mnemonic": "RLC",
+			"hex": "0x03",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x04": {
+			"mnemonic": "RLC",
+			"hex": "0x04",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x05": {
+			"mnemonic": "RLC",
+			"hex": "0x05",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x06": {
+			"mnemonic": "RLC",
+			"hex": "0x06",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x07": {
+			"mnemonic": "RLC",
+			"hex": "0x07",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x08": {
+			"mnemonic": "RRC",
+			"hex": "0x08",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x09": {
+			"mnemonic": "RRC",
+			"hex": "0x09",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0A": {
+			"mnemonic": "RRC",
+			"hex": "0x0A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0B": {
+			"mnemonic": "RRC",
+			"hex": "0x0B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0C": {
+			"mnemonic": "RRC",
+			"hex": "0x0C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0D": {
+			"mnemonic": "RRC",
+			"hex": "0x0D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0E": {
+			"mnemonic": "RRC",
+			"hex": "0x0E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x0F": {
+			"mnemonic": "RRC",
+			"hex": "0x0F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x10": {
+			"mnemonic": "RL",
+			"hex": "0x10",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x11": {
+			"mnemonic": "RL",
+			"hex": "0x11",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x12": {
+			"mnemonic": "RL",
+			"hex": "0x12",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x13": {
+			"mnemonic": "RL",
+			"hex": "0x13",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x14": {
+			"mnemonic": "RL",
+			"hex": "0x14",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x15": {
+			"mnemonic": "RL",
+			"hex": "0x15",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x16": {
+			"mnemonic": "RL",
+			"hex": "0x16",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x17": {
+			"mnemonic": "RL",
+			"hex": "0x17",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x18": {
+			"mnemonic": "RR",
+			"hex": "0x18",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x19": {
+			"mnemonic": "RR",
+			"hex": "0x19",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1A": {
+			"mnemonic": "RR",
+			"hex": "0x1A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1B": {
+			"mnemonic": "RR",
+			"hex": "0x1B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1C": {
+			"mnemonic": "RR",
+			"hex": "0x1C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1D": {
+			"mnemonic": "RR",
+			"hex": "0x1D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1E": {
+			"mnemonic": "RR",
+			"hex": "0x1E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x1F": {
+			"mnemonic": "RR",
+			"hex": "0x1F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x20": {
+			"mnemonic": "SLA",
+			"hex": "0x20",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x21": {
+			"mnemonic": "SLA",
+			"hex": "0x21",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x22": {
+			"mnemonic": "SLA",
+			"hex": "0x22",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x23": {
+			"mnemonic": "SLA",
+			"hex": "0x23",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x24": {
+			"mnemonic": "SLA",
+			"hex": "0x24",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x25": {
+			"mnemonic": "SLA",
+			"hex": "0x25",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x26": {
+			"mnemonic": "SLA",
+			"hex": "0x26",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x27": {
+			"mnemonic": "SLA",
+			"hex": "0x27",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x28": {
+			"mnemonic": "SRA",
+			"hex": "0x28",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x29": {
+			"mnemonic": "SRA",
+			"hex": "0x29",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2A": {
+			"mnemonic": "SRA",
+			"hex": "0x2A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2B": {
+			"mnemonic": "SRA",
+			"hex": "0x2B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2C": {
+			"mnemonic": "SRA",
+			"hex": "0x2C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2D": {
+			"mnemonic": "SRA",
+			"hex": "0x2D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2E": {
+			"mnemonic": "SRA",
+			"hex": "0x2E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x2F": {
+			"mnemonic": "SRA",
+			"hex": "0x2F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x30": {
+			"mnemonic": "SWAP",
+			"hex": "0x30",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x31": {
+			"mnemonic": "SWAP",
+			"hex": "0x31",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x32": {
+			"mnemonic": "SWAP",
+			"hex": "0x32",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x33": {
+			"mnemonic": "SWAP",
+			"hex": "0x33",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x34": {
+			"mnemonic": "SWAP",
+			"hex": "0x34",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x35": {
+			"mnemonic": "SWAP",
+			"hex": "0x35",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x36": {
+			"mnemonic": "SWAP",
+			"hex": "0x36",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x37": {
+			"mnemonic": "SWAP",
+			"hex": "0x37",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "0"
+			}
+		},
+		"0x38": {
+			"mnemonic": "SRL",
+			"hex": "0x38",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x39": {
+			"mnemonic": "SRL",
+			"hex": "0x39",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3A": {
+			"mnemonic": "SRL",
+			"hex": "0x3A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3B": {
+			"mnemonic": "SRL",
+			"hex": "0x3B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3C": {
+			"mnemonic": "SRL",
+			"hex": "0x3C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3D": {
+			"mnemonic": "SRL",
+			"hex": "0x3D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3E": {
+			"mnemonic": "SRL",
+			"hex": "0x3E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x3F": {
+			"mnemonic": "SRL",
+			"hex": "0x3F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "0",
+				"C": "C"
+			}
+		},
+		"0x40": {
+			"mnemonic": "BIT",
+			"hex": "0x40",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x41": {
+			"mnemonic": "BIT",
+			"hex": "0x41",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x42": {
+			"mnemonic": "BIT",
+			"hex": "0x42",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x43": {
+			"mnemonic": "BIT",
+			"hex": "0x43",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x44": {
+			"mnemonic": "BIT",
+			"hex": "0x44",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x45": {
+			"mnemonic": "BIT",
+			"hex": "0x45",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x46": {
+			"mnemonic": "BIT",
+			"hex": "0x46",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x47": {
+			"mnemonic": "BIT",
+			"hex": "0x47",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x48": {
+			"mnemonic": "BIT",
+			"hex": "0x48",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x49": {
+			"mnemonic": "BIT",
+			"hex": "0x49",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4A": {
+			"mnemonic": "BIT",
+			"hex": "0x4A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4B": {
+			"mnemonic": "BIT",
+			"hex": "0x4B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4C": {
+			"mnemonic": "BIT",
+			"hex": "0x4C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4D": {
+			"mnemonic": "BIT",
+			"hex": "0x4D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4E": {
+			"mnemonic": "BIT",
+			"hex": "0x4E",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x4F": {
+			"mnemonic": "BIT",
+			"hex": "0x4F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x50": {
+			"mnemonic": "BIT",
+			"hex": "0x50",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x51": {
+			"mnemonic": "BIT",
+			"hex": "0x51",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x52": {
+			"mnemonic": "BIT",
+			"hex": "0x52",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x53": {
+			"mnemonic": "BIT",
+			"hex": "0x53",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x54": {
+			"mnemonic": "BIT",
+			"hex": "0x54",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x55": {
+			"mnemonic": "BIT",
+			"hex": "0x55",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x56": {
+			"mnemonic": "BIT",
+			"hex": "0x56",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x57": {
+			"mnemonic": "BIT",
+			"hex": "0x57",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x58": {
+			"mnemonic": "BIT",
+			"hex": "0x58",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x59": {
+			"mnemonic": "BIT",
+			"hex": "0x59",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5A": {
+			"mnemonic": "BIT",
+			"hex": "0x5A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5B": {
+			"mnemonic": "BIT",
+			"hex": "0x5B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5C": {
+			"mnemonic": "BIT",
+			"hex": "0x5C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5D": {
+			"mnemonic": "BIT",
+			"hex": "0x5D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5E": {
+			"mnemonic": "BIT",
+			"hex": "0x5E",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x5F": {
+			"mnemonic": "BIT",
+			"hex": "0x5F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x60": {
+			"mnemonic": "BIT",
+			"hex": "0x60",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x61": {
+			"mnemonic": "BIT",
+			"hex": "0x61",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x62": {
+			"mnemonic": "BIT",
+			"hex": "0x62",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x63": {
+			"mnemonic": "BIT",
+			"hex": "0x63",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x64": {
+			"mnemonic": "BIT",
+			"hex": "0x64",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x65": {
+			"mnemonic": "BIT",
+			"hex": "0x65",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x66": {
+			"mnemonic": "BIT",
+			"hex": "0x66",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x67": {
+			"mnemonic": "BIT",
+			"hex": "0x67",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x68": {
+			"mnemonic": "BIT",
+			"hex": "0x68",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x69": {
+			"mnemonic": "BIT",
+			"hex": "0x69",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6A": {
+			"mnemonic": "BIT",
+			"hex": "0x6A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6B": {
+			"mnemonic": "BIT",
+			"hex": "0x6B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6C": {
+			"mnemonic": "BIT",
+			"hex": "0x6C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6D": {
+			"mnemonic": "BIT",
+			"hex": "0x6D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6E": {
+			"mnemonic": "BIT",
+			"hex": "0x6E",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x6F": {
+			"mnemonic": "BIT",
+			"hex": "0x6F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x70": {
+			"mnemonic": "BIT",
+			"hex": "0x70",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x71": {
+			"mnemonic": "BIT",
+			"hex": "0x71",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x72": {
+			"mnemonic": "BIT",
+			"hex": "0x72",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x73": {
+			"mnemonic": "BIT",
+			"hex": "0x73",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x74": {
+			"mnemonic": "BIT",
+			"hex": "0x74",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x75": {
+			"mnemonic": "BIT",
+			"hex": "0x75",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x76": {
+			"mnemonic": "BIT",
+			"hex": "0x76",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x77": {
+			"mnemonic": "BIT",
+			"hex": "0x77",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x78": {
+			"mnemonic": "BIT",
+			"hex": "0x78",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x79": {
+			"mnemonic": "BIT",
+			"hex": "0x79",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7A": {
+			"mnemonic": "BIT",
+			"hex": "0x7A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7B": {
+			"mnemonic": "BIT",
+			"hex": "0x7B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7C": {
+			"mnemonic": "BIT",
+			"hex": "0x7C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7D": {
+			"mnemonic": "BIT",
+			"hex": "0x7D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7E": {
+			"mnemonic": "BIT",
+			"hex": "0x7E",
+			"bytes": 2,
+			"cycles": [
+				12
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x7F": {
+			"mnemonic": "BIT",
+			"hex": "0x7F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "Z",
+				"N": "0",
+				"H": "1",
+				"C": "-"
+			}
+		},
+		"0x80": {
+			"mnemonic": "RES",
+			"hex": "0x80",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x81": {
+			"mnemonic": "RES",
+			"hex": "0x81",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x82": {
+			"mnemonic": "RES",
+			"hex": "0x82",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x83": {
+			"mnemonic": "RES",
+			"hex": "0x83",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x84": {
+			"mnemonic": "RES",
+			"hex": "0x84",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x85": {
+			"mnemonic": "RES",
+			"hex": "0x85",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x86": {
+			"mnemonic": "RES",
+			"hex": "0x86",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x87": {
+			"mnemonic": "RES",
+			"hex": "0x87",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x88": {
+			"mnemonic": "RES",
+			"hex": "0x88",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x89": {
+			"mnemonic": "RES",
+			"hex": "0x89",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8A": {
+			"mnemonic": "RES",
+			"hex": "0x8A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8B": {
+			"mnemonic": "RES",
+			"hex": "0x8B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8C": {
+			"mnemonic": "RES",
+			"hex": "0x8C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8D": {
+			"mnemonic": "RES",
+			"hex": "0x8D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8E": {
+			"mnemonic": "RES",
+			"hex": "0x8E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x8F": {
+			"mnemonic": "RES",
+			"hex": "0x8F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x90": {
+			"mnemonic": "RES",
+			"hex": "0x90",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x91": {
+			"mnemonic": "RES",
+			"hex": "0x91",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x92": {
+			"mnemonic": "RES",
+			"hex": "0x92",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x93": {
+			"mnemonic": "RES",
+			"hex": "0x93",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x94": {
+			"mnemonic": "RES",
+			"hex": "0x94",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x95": {
+			"mnemonic": "RES",
+			"hex": "0x95",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x96": {
+			"mnemonic": "RES",
+			"hex": "0x96",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x97": {
+			"mnemonic": "RES",
+			"hex": "0x97",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x98": {
+			"mnemonic": "RES",
+			"hex": "0x98",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x99": {
+			"mnemonic": "RES",
+			"hex": "0x99",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9A": {
+			"mnemonic": "RES",
+			"hex": "0x9A",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9B": {
+			"mnemonic": "RES",
+			"hex": "0x9B",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9C": {
+			"mnemonic": "RES",
+			"hex": "0x9C",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9D": {
+			"mnemonic": "RES",
+			"hex": "0x9D",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9E": {
+			"mnemonic": "RES",
+			"hex": "0x9E",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0x9F": {
+			"mnemonic": "RES",
+			"hex": "0x9F",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA0": {
+			"mnemonic": "RES",
+			"hex": "0xA0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA1": {
+			"mnemonic": "RES",
+			"hex": "0xA1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA2": {
+			"mnemonic": "RES",
+			"hex": "0xA2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA3": {
+			"mnemonic": "RES",
+			"hex": "0xA3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA4": {
+			"mnemonic": "RES",
+			"hex": "0xA4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA5": {
+			"mnemonic": "RES",
+			"hex": "0xA5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA6": {
+			"mnemonic": "RES",
+			"hex": "0xA6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA7": {
+			"mnemonic": "RES",
+			"hex": "0xA7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA8": {
+			"mnemonic": "RES",
+			"hex": "0xA8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xA9": {
+			"mnemonic": "RES",
+			"hex": "0xA9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAA": {
+			"mnemonic": "RES",
+			"hex": "0xAA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAB": {
+			"mnemonic": "RES",
+			"hex": "0xAB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAC": {
+			"mnemonic": "RES",
+			"hex": "0xAC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAD": {
+			"mnemonic": "RES",
+			"hex": "0xAD",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAE": {
+			"mnemonic": "RES",
+			"hex": "0xAE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xAF": {
+			"mnemonic": "RES",
+			"hex": "0xAF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB0": {
+			"mnemonic": "RES",
+			"hex": "0xB0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB1": {
+			"mnemonic": "RES",
+			"hex": "0xB1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB2": {
+			"mnemonic": "RES",
+			"hex": "0xB2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB3": {
+			"mnemonic": "RES",
+			"hex": "0xB3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB4": {
+			"mnemonic": "RES",
+			"hex": "0xB4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB5": {
+			"mnemonic": "RES",
+			"hex": "0xB5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB6": {
+			"mnemonic": "RES",
+			"hex": "0xB6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB7": {
+			"mnemonic": "RES",
+			"hex": "0xB7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB8": {
+			"mnemonic": "RES",
+			"hex": "0xB8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xB9": {
+			"mnemonic": "RES",
+			"hex": "0xB9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBA": {
+			"mnemonic": "RES",
+			"hex": "0xBA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBB": {
+			"mnemonic": "RES",
+			"hex": "0xBB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBC": {
+			"mnemonic": "RES",
+			"hex": "0xBC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBD": {
+			"mnemonic": "RES",
+			"hex": "0xBD",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBE": {
+			"mnemonic": "RES",
+			"hex": "0xBE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xBF": {
+			"mnemonic": "RES",
+			"hex": "0xBF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC0": {
+			"mnemonic": "SET",
+			"hex": "0xC0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC1": {
+			"mnemonic": "SET",
+			"hex": "0xC1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC2": {
+			"mnemonic": "SET",
+			"hex": "0xC2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC3": {
+			"mnemonic": "SET",
+			"hex": "0xC3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC4": {
+			"mnemonic": "SET",
+			"hex": "0xC4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC5": {
+			"mnemonic": "SET",
+			"hex": "0xC5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC6": {
+			"mnemonic": "SET",
+			"hex": "0xC6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC7": {
+			"mnemonic": "SET",
+			"hex": "0xC7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "0",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC8": {
+			"mnemonic": "SET",
+			"hex": "0xC8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xC9": {
+			"mnemonic": "SET",
+			"hex": "0xC9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCA": {
+			"mnemonic": "SET",
+			"hex": "0xCA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCB": {
+			"mnemonic": "SET",
+			"hex": "0xCB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCC": {
+			"mnemonic": "SET",
+			"hex": "0xCC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCD": {
+			"mnemonic": "SET",
+			"hex": "0xCD",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCE": {
+			"mnemonic": "SET",
+			"hex": "0xCE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xCF": {
+			"mnemonic": "SET",
+			"hex": "0xCF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "1",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD0": {
+			"mnemonic": "SET",
+			"hex": "0xD0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD1": {
+			"mnemonic": "SET",
+			"hex": "0xD1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD2": {
+			"mnemonic": "SET",
+			"hex": "0xD2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD3": {
+			"mnemonic": "SET",
+			"hex": "0xD3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD4": {
+			"mnemonic": "SET",
+			"hex": "0xD4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD5": {
+			"mnemonic": "SET",
+			"hex": "0xD5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD6": {
+			"mnemonic": "SET",
+			"hex": "0xD6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD7": {
+			"mnemonic": "SET",
+			"hex": "0xD7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "2",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD8": {
+			"mnemonic": "SET",
+			"hex": "0xD8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xD9": {
+			"mnemonic": "SET",
+			"hex": "0xD9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDA": {
+			"mnemonic": "SET",
+			"hex": "0xDA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDB": {
+			"mnemonic": "SET",
+			"hex": "0xDB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDC": {
+			"mnemonic": "SET",
+			"hex": "0xDC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDD": {
+			"mnemonic": "SET",
+			"hex": "0xDD",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDE": {
+			"mnemonic": "SET",
+			"hex": "0xDE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xDF": {
+			"mnemonic": "SET",
+			"hex": "0xDF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "3",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE0": {
+			"mnemonic": "SET",
+			"hex": "0xE0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE1": {
+			"mnemonic": "SET",
+			"hex": "0xE1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE2": {
+			"mnemonic": "SET",
+			"hex": "0xE2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE3": {
+			"mnemonic": "SET",
+			"hex": "0xE3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE4": {
+			"mnemonic": "SET",
+			"hex": "0xE4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE5": {
+			"mnemonic": "SET",
+			"hex": "0xE5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE6": {
+			"mnemonic": "SET",
+			"hex": "0xE6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE7": {
+			"mnemonic": "SET",
+			"hex": "0xE7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "4",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE8": {
+			"mnemonic": "SET",
+			"hex": "0xE8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xE9": {
+			"mnemonic": "SET",
+			"hex": "0xE9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEA": {
+			"mnemonic": "SET",
+			"hex": "0xEA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEB": {
+			"mnemonic": "SET",
+			"hex": "0xEB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEC": {
+			"mnemonic": "SET",
+			"hex": "0xEC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xED": {
+			"mnemonic": "SET",
+			"hex": "0xED",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEE": {
+			"mnemonic": "SET",
+			"hex": "0xEE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xEF": {
+			"mnemonic": "SET",
+			"hex": "0xEF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "5",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF0": {
+			"mnemonic": "SET",
+			"hex": "0xF0",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF1": {
+			"mnemonic": "SET",
+			"hex": "0xF1",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF2": {
+			"mnemonic": "SET",
+			"hex": "0xF2",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF3": {
+			"mnemonic": "SET",
+			"hex": "0xF3",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF4": {
+			"mnemonic": "SET",
+			"hex": "0xF4",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF5": {
+			"mnemonic": "SET",
+			"hex": "0xF5",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF6": {
+			"mnemonic": "SET",
+			"hex": "0xF6",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF7": {
+			"mnemonic": "SET",
+			"hex": "0xF7",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "6",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF8": {
+			"mnemonic": "SET",
+			"hex": "0xF8",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "B",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xF9": {
+			"mnemonic": "SET",
+			"hex": "0xF9",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "C",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFA": {
+			"mnemonic": "SET",
+			"hex": "0xFA",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "D",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFB": {
+			"mnemonic": "SET",
+			"hex": "0xFB",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "E",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFC": {
+			"mnemonic": "SET",
+			"hex": "0xFC",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "H",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFD": {
+			"mnemonic": "SET",
+			"hex": "0xFD",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "L",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFE": {
+			"mnemonic": "SET",
+			"hex": "0xFE",
+			"bytes": 2,
+			"cycles": [
+				16
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "HL",
+					"immediate": false
+				}
+			],
+			"immediate": false,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		},
+		"0xFF": {
+			"mnemonic": "SET",
+			"hex": "0xFF",
+			"bytes": 2,
+			"cycles": [
+				8
+			],
+			"operands": [
+				{
+					"name": "7",
+					"immediate": true
+				},
+				{
+					"name": "A",
+					"immediate": true
+				}
+			],
+			"immediate": true,
+			"flags": {
+				"Z": "-",
+				"N": "-",
+				"H": "-",
+				"C": "-"
+			}
+		}
+	}
+}
