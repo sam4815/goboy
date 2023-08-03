@@ -1,5 +1,7 @@
 package gameboy
 
+import "log"
+
 type Gameboy struct {
 	MMU      MMU
 	CPU      CPU
@@ -18,9 +20,8 @@ func New(bytes []byte) Gameboy {
 }
 
 func (gameboy *Gameboy) Run() {
-	gameboy.CPU.ProgramCounter = 0x150
-
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10; i++ {
 		gameboy.CPU.Step()
+		log.Print(gameboy.CPU.ProgramCounter, gameboy.CPU.StackPointer, gameboy.CPU.Registers)
 	}
 }

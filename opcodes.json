@@ -5354,7 +5354,7 @@
 				{
 					"name": "a8",
 					"bytes": 1,
-					"immediate": false
+					"immediate": true
 				},
 				{
 					"name": "A",
@@ -5688,7 +5688,7 @@
 				{
 					"name": "a8",
 					"bytes": 1,
-					"immediate": false
+					"immediate": true
 				}
 			],
 			"immediate": false,

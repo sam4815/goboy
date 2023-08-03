@@ -4,12 +4,15 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"path/filepath"
 	"strconv"
 )
 
 type OperandInfo struct {
 	Name      string
 	Immediate bool
+	Increment bool
+	Decrement bool
 	Bytes     uint8
 }
 
@@ -55,7 +58,7 @@ func ToByteMap(opcodes map[string]OpcodeInfo) map[byte]OpcodeInfo {
 }
 
 func NewDecoder() Decoder {
-	bytes, err := os.ReadFile("opcodes.json")
+	bytes, err := os.ReadFile(filepath.Join(os.Getenv("GOPATH"), "./opcodes.json"))
 	if err != nil {
 		log.Fatal("Error opening opcodes file: ", err)
 	}
