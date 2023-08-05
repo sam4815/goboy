@@ -22,7 +22,7 @@ func TestTitle(t *testing.T) {
 	}
 }
 
-func TestCPU10(t *testing.T) {
+func TestCPU100(t *testing.T) {
 	bytes, err := os.ReadFile("../snake.gb")
 	if err != nil {
 		t.Errorf("Error opening file: %s", err)
@@ -30,11 +30,11 @@ func TestCPU10(t *testing.T) {
 
 	gameboy := New(bytes)
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 100; i++ {
 		gameboy.CPU.Step()
 	}
 
-	expectedProgramCounter := uint16(345)
+	expectedProgramCounter := uint16(349)
 	if gameboy.CPU.ProgramCounter != expectedProgramCounter {
 		t.Errorf("expected %d, got %d", expectedProgramCounter, gameboy.CPU.ProgramCounter)
 	}
@@ -44,20 +44,25 @@ func TestCPU10(t *testing.T) {
 		t.Errorf("expected %d, got %d", expectedStackPointer, gameboy.CPU.StackPointer)
 	}
 
+	expectedCycles := 1068
+	if gameboy.CPU.Cycles != expectedCycles {
+		t.Errorf("expected %d, got %d", expectedCycles, gameboy.CPU.Cycles)
+	}
+
 	expectedRegisters := Registers{
-		A: 17,
+		A: 0,
 		F: Flags{
-			Zero:      true,
-			Subtract:  false,
-			Carry:     false,
+			Zero:      false,
+			Subtract:  true,
+			Carry:     true,
 			HalfCarry: false,
 		},
 		B: 128,
 		C: 0,
-		D: 255,
-		E: 86,
-		H: 0,
-		L: 13,
+		D: 0,
+		E: 216,
+		H: 1,
+		L: 77,
 	}
 
 	if gameboy.CPU.Registers != expectedRegisters {

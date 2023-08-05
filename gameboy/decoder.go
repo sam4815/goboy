@@ -14,6 +14,7 @@ type OperandInfo struct {
 	Increment bool
 	Decrement bool
 	Bytes     uint8
+	Location  uint16
 }
 
 type FlagInfo struct {

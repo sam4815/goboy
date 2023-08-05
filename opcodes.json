@@ -4809,6 +4809,7 @@
 			"operands": [
 				{
 					"name": "$00",
+					"location": 0,
 					"immediate": true
 				}
 			],
@@ -4986,6 +4987,7 @@
 			"operands": [
 				{
 					"name": "$08",
+					"location": 8,
 					"immediate": true
 				}
 			],
@@ -5165,6 +5167,7 @@
 			"operands": [
 				{
 					"name": "$10",
+					"location": 16,
 					"immediate": true
 				}
 			],
@@ -5332,6 +5335,7 @@
 			"operands": [
 				{
 					"name": "$18",
+					"location": 24,
 					"immediate": true
 				}
 			],
@@ -5500,6 +5504,7 @@
 			"operands": [
 				{
 					"name": "$20",
+					"location": 32,
 					"immediate": true
 				}
 			],
@@ -5662,6 +5667,7 @@
 			"operands": [
 				{
 					"name": "$28",
+					"location": 40,
 					"immediate": true
 				}
 			],
@@ -5832,6 +5838,7 @@
 			"operands": [
 				{
 					"name": "$30",
+					"location": 48,
 					"immediate": true
 				}
 			],
@@ -6005,6 +6012,7 @@
 			"operands": [
 				{
 					"name": "$38",
+					"location": 56,
 					"immediate": true
 				}
 			],

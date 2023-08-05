@@ -5,42 +5,59 @@ import (
 )
 
 type CPU struct {
-	Gameboy        *Gameboy
-	ProgramCounter uint16
-	StackPointer   uint16
-	Registers      Registers
-	Cycles         int
-	Decoder        Decoder
+	Gameboy            *Gameboy
+	ProgramCounter     uint16
+	NextProgramCounter uint16
+	StackPointer       uint16
+	Registers          Registers
+	Cycles             int
+	Decoder            Decoder
 }
 
 func NewCPU() CPU {
 	return CPU{
-		ProgramCounter: 0x150,
-		StackPointer:   0xfffe,
-		Decoder:        NewDecoder(),
+		ProgramCounter:     0x150,
+		NextProgramCounter: 0x01,
+		StackPointer:       0xfffe,
+		Cycles:             20,
+		Decoder:            NewDecoder(),
 		Registers: Registers{
-			A: 0x11,
-			F: Flags{Zero: true},
+			A: 0x01,
+			F: Flags{Zero: true, Carry: true},
 			B: 0x0,
-			C: 0x0,
-			D: 0xff,
-			E: 0x56,
-			H: 0x0,
-			L: 0xd,
+			C: 0x13,
+			D: 0x0,
+			E: 0xD8,
+			H: 0x01,
+			L: 0x4D,
 		},
 	}
 }
 
-func (cpu *CPU) CurrentByte() uint8 {
+func (cpu CPU) CurrentByte() uint8 {
 	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter)
 }
 
-func (cpu *CPU) ImmediateByte() uint8 {
+func (cpu CPU) ImmediateByte() uint8 {
 	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1)
 }
 
-func (cpu *CPU) ImmediateWord() uint16 {
+func (cpu CPU) ImmediateByteSigned() int8 {
+	return int8(cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1))
+}
+
+func (cpu CPU) ImmediateWord() uint16 {
 	return cpu.Gameboy.MMU.ReadWord(cpu.ProgramCounter + 1)
+}
+
+func (cpu *CPU) PopStack() uint16 {
+	cpu.StackPointer += 2
+	return cpu.Gameboy.MMU.ReadWord(cpu.StackPointer - 2)
+}
+
+func (cpu *CPU) PushStack(value uint16) {
+	cpu.StackPointer -= 2
+	cpu.Gameboy.MMU.WriteWord(cpu.StackPointer, value)
 }
 
 func (cpu CPU) GetOperand(operand OperandInfo) uint16 {
@@ -73,11 +90,15 @@ func (cpu CPU) GetOperand(operand OperandInfo) uint16 {
 		value = cpu.StackPointer
 	case "n8":
 		value = uint16(cpu.ImmediateByte())
-	case "n16":
-		value = cpu.ImmediateWord()
+	case "e8":
+		value = uint16(cpu.ImmediateByteSigned())
 	case "a8":
 		address := 0xFF00 + uint16(cpu.ImmediateByte())
 		value = uint16(cpu.Gameboy.MMU.ReadByte(address))
+	case "n16":
+		value = cpu.ImmediateWord()
+	case "a16":
+		value = cpu.ImmediateWord()
 	default:
 		log.Fatal("unsupported operand named ", operand.Name)
 	}
@@ -146,8 +167,14 @@ func (cpu *CPU) Step() {
 		opcode = cpu.Decoder.DecodePrefixed(cpu.ImmediateByte())
 	}
 
-	cycles := cpu.Execute(opcode)
+	cpu.Execute(opcode)
 
-	cpu.Cycles += int(cycles)
-	cpu.ProgramCounter += opcode.Bytes
+	cpu.Cycles += int(opcode.Cycles[0])
+
+	if cpu.NextProgramCounter != 0x01 {
+		cpu.ProgramCounter = cpu.NextProgramCounter
+		cpu.NextProgramCounter = 0x01
+	} else {
+		cpu.ProgramCounter += opcode.Bytes
+	}
 }
