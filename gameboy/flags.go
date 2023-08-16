@@ -27,13 +27,13 @@ func (flags Flags) Byte() byte {
 }
 
 func (flags *Flags) Set(b byte) {
-	flags.Zero = b>>7 == 1
-	flags.Subtract = b>>6 == 1
-	flags.HalfCarry = b>>5 == 1
-	flags.Carry = b>>4 == 1
+	flags.Zero = (b>>7)&1 == 1
+	flags.Subtract = (b>>6)&1 == 1
+	flags.HalfCarry = (b>>5)&1 == 1
+	flags.Carry = (b>>4)&1 == 1
 }
 
-func (flags *Flags) Add(a uint16, b uint16, carry bool) uint16 {
+func (flags *Flags) Add(a uint16, b uint16, carry bool, info FlagInfo) uint16 {
 	result := int16(a) + int16(b)
 
 	if carry && flags.Carry {
@@ -43,13 +43,15 @@ func (flags *Flags) Add(a uint16, b uint16, carry bool) uint16 {
 
 	flags.Zero = result == 0
 	flags.Subtract = false
-	flags.Carry = result > 0xFF
+	if info.C == "C" {
+		flags.Carry = result > 0xFF
+	}
 	flags.HalfCarry = (a&0x0F)+(b&0x0F) > 0x0F
 
 	return uint16(result)
 }
 
-func (flags *Flags) Sub(a uint16, b uint16, carry bool) uint16 {
+func (flags *Flags) Sub(a uint16, b uint16, carry bool, info FlagInfo) uint16 {
 	result := int16(a) - int16(b)
 
 	if carry && flags.Carry {
@@ -59,7 +61,9 @@ func (flags *Flags) Sub(a uint16, b uint16, carry bool) uint16 {
 
 	flags.Zero = result == 0
 	flags.Subtract = true
-	flags.Carry = result < 0
+	if info.C == "C" {
+		flags.Carry = result < 0
+	}
 	flags.HalfCarry = (a & 0x0F) < (b & 0x0F)
 
 	return uint16(result)
