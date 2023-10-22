@@ -27,33 +27,33 @@ const (
 func (registers Registers) GetPair(pair Pair) uint16 {
 	switch pair {
 	case AF:
-		return binary.LittleEndian.Uint16([]byte{registers.A, registers.F.Byte()})
+		return binary.BigEndian.Uint16([]byte{registers.A, registers.F.Byte()})
 	case BC:
-		return binary.LittleEndian.Uint16([]byte{registers.B, registers.C})
+		return binary.BigEndian.Uint16([]byte{registers.B, registers.C})
 	case DE:
-		return binary.LittleEndian.Uint16([]byte{registers.D, registers.E})
+		return binary.BigEndian.Uint16([]byte{registers.D, registers.E})
 	case HL:
-		return binary.LittleEndian.Uint16([]byte{registers.H, registers.L})
+		return binary.BigEndian.Uint16([]byte{registers.H, registers.L})
 	}
 	return 0
 }
 
 func (registers *Registers) SetPair(pair Pair, value uint16) {
-	hi := uint8(value >> 8)
-	lo := uint8(value & 0xff)
+	lowByte := byte((value & 0xFF00) >> 8)
+	highByte := byte(value & 0x00FF)
 
 	switch pair {
 	case AF:
-		registers.A = lo
-		registers.F.Set(hi)
+		registers.A = lowByte
+		registers.F.Set(highByte)
 	case BC:
-		registers.B = lo
-		registers.C = hi
+		registers.B = lowByte
+		registers.C = highByte
 	case DE:
-		registers.D = lo
-		registers.E = hi
+		registers.D = lowByte
+		registers.E = highByte
 	case HL:
-		registers.H = lo
-		registers.L = hi
+		registers.H = lowByte
+		registers.L = highByte
 	}
 }

@@ -4,7 +4,9 @@ import (
 	"log"
 )
 
-func (cpu *CPU) Execute(opcode OpcodeInfo) {
+func (cpu *CPU) Execute(opcode OpcodeInfo) int {
+	// log.Print(opcode.Mnemonic, opcode.Hex)
+
 	switch opcode.Mnemonic {
 	case "NOP":
 	case "DI":
@@ -16,25 +18,25 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) {
 		cpu.SetOperand(opcode.Operands[0], value)
 
 	case "INC":
-		value := cpu.GetOperand(opcode.Operands[0])
-		cpu.SetOperand(opcode.Operands[0], value+1)
+		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), 1, false, opcode.Flags)
+		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "DEC":
-		value := cpu.GetOperand(opcode.Operands[0])
-		cpu.SetOperand(opcode.Operands[0], value-1)
+		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), 1, false, opcode.Flags)
+		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "JR":
 		if len(opcode.Operands) == 1 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
 			cpu.ProgramCounter += uint16(cpu.ImmediateByteSigned())
 		} else {
-			cpu.Cycles -= opcode.Cycles[0] - opcode.Cycles[1]
+			return opcode.Cycles[1]
 		}
 
 	case "JP":
 		if len(opcode.Operands) == 1 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
 			cpu.NextProgramCounter = cpu.ImmediateWord()
 		} else {
-			cpu.Cycles -= opcode.Cycles[0] - opcode.Cycles[1]
+			return opcode.Cycles[1]
 		}
 
 	case "CALL":
@@ -42,30 +44,30 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) {
 			cpu.PushStack(cpu.StackPointer + 3)
 			cpu.NextProgramCounter = cpu.ImmediateWord()
 		} else {
-			cpu.Cycles -= opcode.Cycles[0] - opcode.Cycles[1]
+			return opcode.Cycles[1]
 		}
 
 	case "RET":
 		if len(opcode.Operands) == 0 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
 			cpu.NextProgramCounter = cpu.PopStack()
 		} else {
-			cpu.Cycles -= opcode.Cycles[0] - opcode.Cycles[1]
+			return opcode.Cycles[1]
 		}
 
 	case "ADD":
-		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
+		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
 		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "ADC":
-		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true)
+		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true, opcode.Flags)
 		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "SUB":
-		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
+		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
 		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "SBC":
-		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true)
+		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true, opcode.Flags)
 		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "AND":
@@ -81,7 +83,7 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) {
 		cpu.SetOperand(opcode.Operands[0], result)
 
 	case "CP":
-		cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
+		cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
 
 	case "POP":
 		cpu.SetOperand(opcode.Operands[0], cpu.PopStack())
@@ -123,4 +125,6 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) {
 	default:
 		log.Printf("unimplemented opcode %s: %s", opcode.Hex, opcode.Mnemonic)
 	}
+
+	return opcode.Cycles[0]
 }

@@ -1,70 +1,98 @@
 package gameboy
 
-import "github.com/go-gl/glfw/v3.3/glfw"
+import (
+	"fmt"
+	"os"
+
+	"github.com/veandco/go-sdl2/sdl"
+)
 
 type Display struct {
-	Window  *glfw.Window
-	Gameboy *Gameboy
+	Gameboy  *Gameboy
+	Renderer *sdl.Renderer
+	Width    int32
+	Height   int32
 }
 
-func GetKey(key glfw.Key) Key {
-	switch key {
-	case glfw.KeyUp:
+func GetKey(keyName string) Key {
+	switch keyName {
+	case "Up":
 		return Up
-	case glfw.KeyDown:
+	case "Down":
 		return Down
-	case glfw.KeyLeft:
+	case "Left":
 		return Left
-	case glfw.KeyRight:
+	case "Right":
 		return Right
-	case glfw.KeyZ:
+	case "A":
 		return A
-	case glfw.KeyX:
+	case "S":
 		return B
-	case glfw.KeyEnter:
+	case "Return":
 		return Start
-	case glfw.KeyRightShift:
+	case "Right Shift":
 		return Select
 	}
 	return Unsupported
 }
 
-func NewDisplay() Display {
-	err := glfw.Init()
-	if err != nil {
-		panic(err)
-	}
-	defer glfw.Terminate()
+func (display Display) Quit() {
+	display.Renderer.Destroy()
+}
 
-	window, err := glfw.CreateWindow(160, 144, "Gameboy", nil, nil)
-	if err != nil {
-		panic(err)
-	}
+func (display Display) HandleEvents() {
+	for event := sdl.PollEvent(); event != nil; event = sdl.PollEvent() {
+		switch event.(type) {
+		case *sdl.KeyboardEvent:
+			keyEvent := event.(*sdl.KeyboardEvent)
 
-	display := Display{Window: window}
-
-	onKeyPress := func(w *glfw.Window, key glfw.Key, scancode int, action glfw.Action, mods glfw.ModifierKey) {
-		gameboyKey := GetKey(key)
-		if gameboyKey == Unsupported {
-			return
-		}
-
-		switch action {
-		case glfw.Press:
-			display.Gameboy.MMU.KeyDown(gameboyKey)
-		case glfw.Release:
-			display.Gameboy.MMU.KeyUp(gameboyKey)
+			if keyEvent.Type == sdl.KEYDOWN {
+				keyName := sdl.GetKeyName(keyEvent.Keysym.Sym)
+				display.Gameboy.MMU.KeyDown(GetKey(keyName))
+			} else if keyEvent.Type == sdl.KEYUP {
+				keyName := sdl.GetKeyName(keyEvent.Keysym.Sym)
+				display.Gameboy.MMU.KeyUp(GetKey(keyName))
+			}
+		case *sdl.QuitEvent:
+			display.Quit()
+			break
 		}
 	}
+}
 
-	window.SetKeyCallback(onKeyPress)
+func NewDisplay() *Display {
+	display := Display{Height: 144, Width: 160}
 
-	window.MakeContextCurrent()
-
-	for !window.ShouldClose() {
-		window.SwapBuffers()
-		glfw.PollEvents()
+	err := sdl.Init(sdl.INIT_EVERYTHING)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to iniialize sdl: %s\n", err)
 	}
 
-	return display
+	window, _ := sdl.CreateWindow("Goboy", sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED,
+		display.Width, display.Height, sdl.WINDOW_SHOWN)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to create window: %s\n", err)
+	}
+
+	renderer, err := sdl.CreateRenderer(window, -1, sdl.RENDERER_ACCELERATED)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to create renderer: %s\n", err)
+	}
+
+	display.Renderer = renderer
+
+	return &display
+}
+
+func (display Display) Flush(canvas []byte) {
+	for x := int32(0); x < display.Width; x++ {
+		for y := int32(0); y < display.Height; y++ {
+			pixelOffset := (x + y*display.Width) * 4
+			colour := canvas[pixelOffset : pixelOffset+4]
+
+			display.Renderer.SetDrawColor(colour[0], colour[1], colour[2], colour[3])
+			display.Renderer.DrawPoint(x, y)
+		}
+	}
+	display.Renderer.Present()
 }

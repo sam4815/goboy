@@ -11,11 +11,12 @@ type CPU struct {
 	StackPointer       uint16
 	Registers          Registers
 	Cycles             int
+	Steps              int
 	Decoder            Decoder
 }
 
-func NewCPU() CPU {
-	return CPU{
+func NewCPU() *CPU {
+	return &CPU{
 		ProgramCounter:     0x150,
 		NextProgramCounter: 0x01,
 		StackPointer:       0xfffe,
@@ -60,7 +61,7 @@ func (cpu *CPU) PushStack(value uint16) {
 	cpu.Gameboy.MMU.WriteWord(cpu.StackPointer, value)
 }
 
-func (cpu CPU) GetOperand(operand OperandInfo) uint16 {
+func (cpu *CPU) GetOperand(operand OperandInfo) uint16 {
 	var value uint16
 
 	switch operand.Name {
@@ -95,6 +96,8 @@ func (cpu CPU) GetOperand(operand OperandInfo) uint16 {
 	case "a8":
 		address := 0xFF00 + uint16(cpu.ImmediateByte())
 		value = uint16(cpu.Gameboy.MMU.ReadByte(address))
+	case "c8":
+		value = 0xFF00 + uint16(cpu.Registers.C)
 	case "n16":
 		value = cpu.ImmediateWord()
 	case "a16":
@@ -103,29 +106,35 @@ func (cpu CPU) GetOperand(operand OperandInfo) uint16 {
 		log.Fatal("unsupported operand named ", operand.Name)
 	}
 
+	if operand.Increment && !operand.Immediate {
+		cpu.SetOperand(OperandInfo{Name: operand.Name, Immediate: true}, value+1)
+	}
+	if operand.Increment && operand.Immediate {
+		cpu.SetOperand(OperandInfo{Name: operand.Name, Immediate: true}, uint16(cpu.ImmediateByte())+1)
+	}
+	if operand.Decrement && !operand.Immediate {
+		cpu.SetOperand(OperandInfo{Name: operand.Name, Immediate: true}, value-1)
+	}
 	if !operand.Immediate {
 		value = cpu.Gameboy.MMU.ReadWord(value)
-	}
-	if operand.Increment {
-		value += 1
-	}
-	if operand.Decrement {
-		value -= 1
 	}
 
 	return value
 }
 
 func (cpu *CPU) SetOperand(operand OperandInfo, value uint16) {
-	if operand.Increment {
-		value += 1
-	}
-	if operand.Decrement {
-		value -= 1
-	}
 	if !operand.Immediate {
 		address := cpu.GetOperand(OperandInfo{Name: operand.Name, Immediate: true})
 		cpu.Gameboy.MMU.WriteWord(address, value)
+
+		if operand.Decrement {
+			cpu.SetOperand(OperandInfo{Name: operand.Name, Immediate: true}, address-1)
+		}
+
+		if operand.Increment {
+			cpu.SetOperand(OperandInfo{Name: operand.Name, Immediate: true}, address+1)
+		}
+
 		return
 	}
 
@@ -167,9 +176,10 @@ func (cpu *CPU) Step() {
 		opcode = cpu.Decoder.DecodePrefixed(cpu.ImmediateByte())
 	}
 
-	cpu.Execute(opcode)
+	cycles := cpu.Execute(opcode)
 
-	cpu.Cycles += int(opcode.Cycles[0])
+	cpu.Cycles += int(cycles)
+	cpu.Gameboy.GPU.Clock += int(cycles)
 
 	if cpu.NextProgramCounter != 0x01 {
 		cpu.ProgramCounter = cpu.NextProgramCounter

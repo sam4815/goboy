@@ -1,6 +1,8 @@
 package gameboy
 
-import "log"
+import (
+	"log"
+)
 
 type BankingMode uint8
 
@@ -18,8 +20,8 @@ type MBC1Registers struct {
 }
 
 type MMU struct {
+	Gameboy       *Gameboy
 	ROM           []byte
-	VideoRAM      []byte
 	ExternalRAM   []byte
 	WorkRAM       []byte
 	HighRAM       []byte
@@ -83,32 +85,33 @@ func (mmu *MMU) ReadBankingMode() {
 	}
 }
 
-func NewMMU(bytes []byte) MMU {
+func NewMMU(bytes []byte) *MMU {
 	mmu := MMU{
 		ROM:         make([]byte, 16384),
-		VideoRAM:    make([]byte, 8192),
 		ExternalRAM: make([]byte, 8192),
+		WorkRAM:     make([]byte, 8192),
+		HighRAM:     make([]byte, 8192),
 		OAM:         make([]byte, 160),
-		ROMOffset:   0x4000,
+		ROMOffset:   0x0000,
 	}
 	copy(mmu.ROM, bytes)
 
 	mmu.InitializeIO()
 	mmu.ReadBankingMode()
 
-	return mmu
+	return &mmu
 }
 
 func (mmu MMU) ReadByte(address uint16) byte {
 	switch address & 0xF000 {
-	case 0x1000, 0x2000, 0x3000:
+	case 0x0000, 0x1000, 0x2000, 0x3000:
 		return mmu.ROM[address]
 
 	case 0x4000, 0x5000, 0x6000, 0x7000:
-		return mmu.ROM[mmu.ROMOffset+address&0x3FFF]
+		return mmu.ROM[mmu.ROMOffset+(address&0x3FFF)]
 
 	case 0x8000, 0x9000:
-		return mmu.VideoRAM[address&0x1FFF]
+		return mmu.Gameboy.GPU.VRAM[address&0x1FFF]
 
 	case 0xA000, 0xB000:
 		return mmu.ExternalRAM[mmu.RAMOffset+address&0x1FFF]
@@ -132,7 +135,7 @@ func (mmu MMU) ReadByte(address uint16) byte {
 					return mmu.Keys
 				}
 			case 0x40, 0x50, 0x60, 0x70:
-				// GPU Registers
+				return mmu.Gameboy.GPU.ReadRegisters(address)
 			case 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0:
 				return mmu.HighRAM[address&0x7F]
 			case 0xF0:
@@ -146,11 +149,15 @@ func (mmu MMU) ReadByte(address uint16) byte {
 		}
 	}
 
-	log.Print("attempting to access invalid memory address")
+	log.Printf("attempting to access invalid memory address %x", address)
 	return 0
 }
 
 func (mmu *MMU) WriteByte(address uint16, value byte) {
+	// if value != 0 {
+	// 	log.Print("MMU WRITE BYTE: ", address, value)
+	// 	mmu.Gameboy.Dump()
+	// }
 	switch address & 0xF000 {
 	case 0x0000, 0x1000:
 		switch mmu.BankingMode {
@@ -194,7 +201,8 @@ func (mmu *MMU) WriteByte(address uint16, value byte) {
 		}
 
 	case 0x8000, 0x9000:
-		mmu.VideoRAM[address&0x1FFF] = value
+		mmu.Gameboy.GPU.VRAM[address&0x1FFF] = value
+		mmu.Gameboy.GPU.UpdateTile(address&0x1FFF, value)
 
 	case 0xA000, 0xB000:
 		mmu.ExternalRAM[mmu.RAMOffset+address&0x1FFF] = value
@@ -215,7 +223,7 @@ func (mmu *MMU) WriteByte(address uint16, value byte) {
 					mmu.Keys = value
 				}
 			case 0x40, 0x50, 0x60, 0x70:
-				// GPU Registers
+				mmu.Gameboy.GPU.WriteRegisters(address, value)
 			case 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0:
 				mmu.HighRAM[address&0x7F] = value
 			case 0xF0:
@@ -235,6 +243,9 @@ func (mmu MMU) ReadWord(address uint16) uint16 {
 }
 
 func (mmu *MMU) WriteWord(address uint16, value uint16) {
+	// if value != 0 {
+	// 	log.Print("WRITING WORD ", address, value, byte((value&0xFF00)>>8), byte(value&0x00FF))
+	// }
 	highByte := byte((value & 0xFF00) >> 8)
 	lowByte := byte(value & 0x00FF)
 

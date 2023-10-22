@@ -5403,7 +5403,7 @@
 			],
 			"operands": [
 				{
-					"name": "C",
+					"name": "c8",
 					"immediate": false
 				},
 				{
