@@ -1,9 +1,5 @@
 package gameboy
 
-import (
-	"log"
-)
-
 type BankingMode uint8
 
 const (
@@ -87,7 +83,7 @@ func (mmu *MMU) ReadBankingMode() {
 
 func NewMMU(bytes []byte) *MMU {
 	mmu := MMU{
-		ROM:         make([]byte, 16384),
+		ROM:         make([]byte, 16384*128),
 		ExternalRAM: make([]byte, 8192),
 		WorkRAM:     make([]byte, 8192),
 		HighRAM:     make([]byte, 8192),
@@ -103,6 +99,7 @@ func NewMMU(bytes []byte) *MMU {
 }
 
 func (mmu MMU) ReadByte(address uint16) byte {
+	// log.Print(address, mmu.ROM[45157])
 	switch address & 0xF000 {
 	case 0x0000, 0x1000, 0x2000, 0x3000:
 		return mmu.ROM[address]
@@ -125,11 +122,15 @@ func (mmu MMU) ReadByte(address uint16) byte {
 			return mmu.WorkRAM[address&0x1FFF]
 
 		case 0xE00:
-			return mmu.OAM[address&0xFF]
+			if address < 0xFEA0 {
+				return mmu.OAM[address&0xFF]
+			} else {
+				return 0
+			}
 
 		case 0xF00:
 			switch address & 0xF0 {
-			case 0x00, 0x10, 0x20, 0x30:
+			case 0x00:
 				switch address & 0xF {
 				case 0x00:
 					return mmu.Keys
@@ -149,7 +150,7 @@ func (mmu MMU) ReadByte(address uint16) byte {
 		}
 	}
 
-	log.Printf("attempting to access invalid memory address %x", address)
+	// log.Printf("attempting to access invalid memory address %x", address)
 	return 0
 }
 
@@ -217,7 +218,7 @@ func (mmu *MMU) WriteByte(address uint16, value byte) {
 
 		case 0xF00:
 			switch address & 0xF0 {
-			case 0x00, 0x10, 0x20, 0x30:
+			case 0x00:
 				switch address & 0xF {
 				case 0x00:
 					mmu.Keys = value
