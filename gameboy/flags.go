@@ -41,12 +41,39 @@ func (flags *Flags) Add(a uint16, b uint16, carry bool, info FlagInfo) uint16 {
 		b -= 1
 	}
 
-	flags.Zero = result == 0
-	flags.Subtract = false
-	if info.C == "C" {
-		flags.Carry = result > 0xFF
+	switch info.Z {
+	case "Z":
+		flags.Zero = result == 0
+	case "1":
+		flags.Zero = true
+	case "0":
+		flags.Zero = false
 	}
-	flags.HalfCarry = (a&0x0F)+(b&0x0F) > 0x0F
+
+	switch info.N {
+	case "1":
+		flags.Subtract = true
+	case "N", "0":
+		flags.Subtract = false
+	}
+
+	switch info.C {
+	case "C":
+		flags.Carry = result > 0xFF
+	case "1":
+		flags.Carry = true
+	case "0":
+		flags.Carry = false
+	}
+
+	switch info.H {
+	case "H":
+		flags.HalfCarry = (a&0x0F)+(b&0x0F) > 0x0F
+	case "1":
+		flags.HalfCarry = true
+	case "0":
+		flags.HalfCarry = false
+	}
 
 	return uint16(result)
 }
@@ -59,12 +86,39 @@ func (flags *Flags) Sub(a uint16, b uint16, carry bool, info FlagInfo) uint16 {
 		b -= 1
 	}
 
-	flags.Zero = result == 0
-	flags.Subtract = true
-	if info.C == "C" {
-		flags.Carry = result < 0
+	switch info.Z {
+	case "Z":
+		flags.Zero = result == 0
+	case "1":
+		flags.Zero = true
+	case "0":
+		flags.Zero = false
 	}
-	flags.HalfCarry = (a & 0x0F) < (b & 0x0F)
+
+	switch info.N {
+	case "N", "1":
+		flags.Subtract = true
+	case "0":
+		flags.Subtract = false
+	}
+
+	switch info.C {
+	case "C":
+		flags.Carry = result < 0
+	case "1":
+		flags.Carry = true
+	case "0":
+		flags.Carry = false
+	}
+
+	switch info.H {
+	case "H":
+		flags.HalfCarry = (a & 0x0F) < (b & 0x0F)
+	case "1":
+		flags.HalfCarry = true
+	case "0":
+		flags.HalfCarry = false
+	}
 
 	return uint16(result)
 }
