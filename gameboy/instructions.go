@@ -5,7 +5,7 @@ import (
 )
 
 func (cpu *CPU) Execute(opcode OpcodeInfo) int {
-	// log.Print(opcode.Mnemonic, opcode.Hex)
+	// fmt.Printf("Executing %s %s\n", opcode.Mnemonic, opcode.Hex)
 
 	switch opcode.Mnemonic {
 	case "NOP":
