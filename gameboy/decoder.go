@@ -17,7 +17,7 @@ type OperandInfo struct {
 	Location  uint16
 }
 
-type FlagInfo struct {
+type FlagInstructions struct {
 	Z string
 	N string
 	H string
@@ -30,7 +30,7 @@ type OpcodeInfo struct {
 	Cycles    []int
 	Operands  []OperandInfo
 	Immediate bool
-	Flags     FlagInfo
+	Flags     FlagInstructions
 	Hex       string
 }
 

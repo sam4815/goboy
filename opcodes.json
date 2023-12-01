@@ -199,7 +199,7 @@
 			}
 		},
 		"0x09": {
-			"mnemonic": "ADD",
+			"mnemonic": "ADD16",
 			"hex": "0x09",
 			"bytes": 1,
 			"cycles": [
@@ -356,7 +356,7 @@
 		"0x10": {
 			"mnemonic": "STOP",
 			"hex": "0x10",
-			"bytes": 2,
+			"bytes": 1,
 			"cycles": [
 				4
 			],
@@ -554,7 +554,7 @@
 			}
 		},
 		"0x19": {
-			"mnemonic": "ADD",
+			"mnemonic": "ADD16",
 			"hex": "0x19",
 			"bytes": 1,
 			"cycles": [
@@ -920,7 +920,7 @@
 			}
 		},
 		"0x29": {
-			"mnemonic": "ADD",
+			"mnemonic": "ADD16",
 			"hex": "0x29",
 			"bytes": 1,
 			"cycles": [
@@ -1287,7 +1287,7 @@
 			}
 		},
 		"0x39": {
-			"mnemonic": "ADD",
+			"mnemonic": "ADD16",
 			"hex": "0x39",
 			"bytes": 1,
 			"cycles": [
@@ -5739,7 +5739,7 @@
 					"immediate": true
 				},
 				{
-					"name": "C",
+					"name": "c8",
 					"immediate": false
 				}
 			],
@@ -5851,7 +5851,7 @@
 			}
 		},
 		"0xF8": {
-			"mnemonic": "LD",
+			"mnemonic": "LDHLSP",
 			"hex": "0xF8",
 			"bytes": 2,
 			"cycles": [
@@ -5864,7 +5864,6 @@
 				},
 				{
 					"name": "SP",
-					"increment": true,
 					"immediate": true
 				},
 				{

@@ -13,6 +13,7 @@ type CPU struct {
 	Cycles             int
 	Steps              int
 	Decoder            Decoder
+	EnableInterrupts   bool
 }
 
 func NewCPU() *CPU {
@@ -41,10 +42,6 @@ func (cpu CPU) CurrentByte() uint8 {
 
 func (cpu CPU) ImmediateByte() uint8 {
 	return cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1)
-}
-
-func (cpu CPU) ImmediateByteSigned() int8 {
-	return int8(cpu.Gameboy.MMU.ReadByte(cpu.ProgramCounter + 1))
 }
 
 func (cpu CPU) ImmediateWord() uint16 {
@@ -89,18 +86,14 @@ func (cpu *CPU) GetOperand(operand OperandInfo) uint16 {
 		value = uint16(cpu.Registers.L)
 	case "SP":
 		value = cpu.StackPointer
-	case "n8":
+	case "n8", "e8":
 		value = uint16(cpu.ImmediateByte())
-	case "e8":
-		value = uint16(cpu.ImmediateByteSigned())
 	case "a8":
 		address := 0xFF00 + uint16(cpu.ImmediateByte())
 		value = uint16(cpu.Gameboy.MMU.ReadByte(address))
 	case "c8":
 		value = 0xFF00 + uint16(cpu.Registers.C)
-	case "n16":
-		value = cpu.ImmediateWord()
-	case "a16":
+	case "n16", "a16":
 		value = cpu.ImmediateWord()
 	default:
 		log.Fatal("unsupported operand named ", operand.Name)

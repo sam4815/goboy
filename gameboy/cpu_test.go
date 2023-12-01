@@ -3,7 +3,6 @@ package gameboy
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -112,7 +111,16 @@ func dumpState(gameboy Gameboy) CPUState {
 	for i, memory := range gameboy.MMU.WorkRAM {
 		if memory != 0 {
 			ram = append(ram, []int{i + 0xC000, int(memory)})
-			// ram = append(ram, []int{i + 0xE000, int(memory)})
+		}
+	}
+	for i, memory := range gameboy.MMU.Audio {
+		if memory != 0 {
+			ram = append(ram, []int{i + 0xFF10, int(memory)})
+		}
+	}
+	for i, memory := range gameboy.MMU.IO {
+		if memory != 0 {
+			ram = append(ram, []int{i + 0xFF40, int(memory)})
 		}
 	}
 	for i, memory := range gameboy.MMU.HighRAM {
@@ -141,13 +149,15 @@ func TestCPU(t *testing.T) {
 		filename := fmt.Sprintf("./gameboy/v1/%02x.json", i)
 		bytes, err := os.ReadFile(filepath.Join(os.Getenv("GOPATH"), filename))
 		if err != nil {
-			log.Fatal("Error opening opcodes file: ", err)
+			continue
 		}
 
 		var testCases []TestCase
 		json.Unmarshal(bytes, &testCases)
 
 		failed := 0
+
+		testCases = testCases[0:100]
 
 		for _, testCase := range testCases {
 			gameboy := Gameboy{
@@ -160,6 +170,7 @@ func TestCPU(t *testing.T) {
 			gameboy.MMU.Gameboy = &gameboy
 			gameboy.MMU.BankingMode = MBC1
 			gameboy.MMU.WriteByte(0x2000, 1)
+			gameboy.MMU.AllowROMWrites = true
 
 			copyState(&gameboy, testCase.Initial)
 

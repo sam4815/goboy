@@ -6,10 +6,10 @@ import (
 
 func (cpu *CPU) Execute(opcode OpcodeInfo) int {
 	// fmt.Printf("Executing %s %s\n", opcode.Mnemonic, opcode.Hex)
-
 	switch opcode.Mnemonic {
 	case "NOP":
-	case "DI":
+	case "STOP":
+	case "HALT":
 
 	case "LD":
 		fallthrough
@@ -17,31 +17,47 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) int {
 		value := cpu.GetOperand(opcode.Operands[1])
 		cpu.SetOperand(opcode.Operands[0], value)
 
-	case "INC":
-		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), 1, false, opcode.Flags)
+	case "LDHLSP":
+		immediate := cpu.ImmediateByte()
+		result, flags := Add(cpu.GetOperand(opcode.Operands[1]), uint16(immediate), false)
+		if immediate > 127 {
+			result, flags = Sub(cpu.GetOperand(opcode.Operands[0]), uint16(immediate-127), false)
+		}
+
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
+
+	case "INC":
+		result, flags := Add(cpu.GetOperand(opcode.Operands[0]), 1, false)
+		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "DEC":
-		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), 1, false, opcode.Flags)
+		result, flags := Sub(cpu.GetOperand(opcode.Operands[0]), 1, false)
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "JR":
-		if len(opcode.Operands) == 1 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
-			cpu.ProgramCounter += uint16(cpu.ImmediateByteSigned())
+		if len(opcode.Operands) == 1 {
+			cpu.NextProgramCounter += cpu.GetOperand(opcode.Operands[0])
+		} else if cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
+			cpu.ProgramCounter += cpu.GetOperand(opcode.Operands[1])
 		} else {
 			return opcode.Cycles[1]
 		}
 
 	case "JP":
-		if len(opcode.Operands) == 1 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
-			cpu.NextProgramCounter = cpu.ImmediateWord()
+		if len(opcode.Operands) == 1 {
+			cpu.NextProgramCounter = cpu.GetOperand(opcode.Operands[0])
+		} else if cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
+			cpu.NextProgramCounter = cpu.GetOperand(opcode.Operands[1])
 		} else {
 			return opcode.Cycles[1]
 		}
 
 	case "CALL":
 		if len(opcode.Operands) == 1 || cpu.Registers.F.GetFlagOperand(opcode.Operands[0]) {
-			cpu.PushStack(cpu.StackPointer + 3)
+			cpu.PushStack(cpu.ProgramCounter + 3)
 			cpu.NextProgramCounter = cpu.ImmediateWord()
 		} else {
 			return opcode.Cycles[1]
@@ -55,35 +71,75 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) int {
 		}
 
 	case "ADD":
-		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
+		result, flags := Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
+
+	case "ADD16":
+		result, flags := Add16(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
+		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "ADC":
-		result := cpu.Registers.F.Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true, opcode.Flags)
+		result, flags := Add(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), cpu.Registers.F.Carry)
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "SUB":
-		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
+		result, flags := Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "SBC":
-		result := cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), true, opcode.Flags)
+		result, flags := Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), cpu.Registers.F.Carry)
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "AND":
-		result := cpu.Registers.F.And(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
+		result, flags := And(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
+
+	case "DAA":
+		value := cpu.Registers.A
+		carry := cpu.Registers.F.Carry
+
+		if !cpu.Registers.F.Subtract {
+			if cpu.Registers.F.Carry || value > 0x99 {
+				carry = true
+				cpu.Registers.A += 0x60
+			}
+			if cpu.Registers.F.HalfCarry || (value&0x0f) > 0x09 {
+				cpu.Registers.A += 0x6
+			}
+		} else {
+			if cpu.Registers.F.Carry {
+				cpu.Registers.A -= 0x60
+			}
+			if cpu.Registers.F.HalfCarry {
+				cpu.Registers.A -= 0x6
+			}
+		}
+
+		cpu.Registers.F.ProcessFlags(Flags{Zero: cpu.Registers.A == 0, Carry: carry}, opcode.Flags)
 
 	case "OR":
-		result := cpu.Registers.F.Or(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
+		result, flags := Or(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "XOR":
-		result := cpu.Registers.F.Xor(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
+		result, flags := Xor(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]))
 		cpu.SetOperand(opcode.Operands[0], result)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
+
+	case "CPL":
+		cpu.Registers.A ^= 0xff
+		cpu.Registers.F.ProcessFlags(Flags{}, opcode.Flags)
 
 	case "CP":
-		cpu.Registers.F.Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false, opcode.Flags)
+		_, flags := Sub(cpu.GetOperand(opcode.Operands[0]), cpu.GetOperand(opcode.Operands[1]), false)
+		cpu.Registers.F.ProcessFlags(flags, opcode.Flags)
 
 	case "POP":
 		cpu.SetOperand(opcode.Operands[0], cpu.PopStack())
@@ -92,8 +148,11 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) int {
 		cpu.PushStack(cpu.GetOperand(opcode.Operands[0]))
 
 	case "RST":
-		cpu.PushStack(cpu.ProgramCounter)
+		cpu.PushStack(cpu.ProgramCounter + 1)
 		cpu.NextProgramCounter = opcode.Operands[0].Location
+
+	case "RETI":
+		cpu.NextProgramCounter = cpu.PopStack()
 
 	case "SWAP":
 		value := cpu.GetOperand(opcode.Operands[0])
@@ -102,25 +161,52 @@ func (cpu *CPU) Execute(opcode OpcodeInfo) int {
 
 	case "RRCA":
 		value := cpu.Registers.A
-		cpu.Registers.F.Carry = value&1 == 1
 		cpu.Registers.A = value<<7 | value>>1
+		cpu.Registers.F.ProcessFlags(Flags{Carry: value&1 == 1}, opcode.Flags)
 
 	case "RRA":
-		cpu.Registers.A = cpu.Registers.F.RotateRightWriteCarry(cpu.Registers.A)
+		value := cpu.Registers.A
+		cpu.Registers.A = BoolToByte(cpu.Registers.F.Carry)<<7 | value>>1
+		cpu.Registers.F.ProcessFlags(Flags{Carry: value&1 == 1}, opcode.Flags)
 
 	case "SLA":
-		value := cpu.Registers.F.RotateLeftWriteCarry(byte(cpu.GetOperand(opcode.Operands[0])))
-		value &= 0
-		cpu.SetOperand(opcode.Operands[0], uint16(value))
+		value := byte(cpu.GetOperand(opcode.Operands[0]))
+		cpu.SetOperand(opcode.Operands[0], uint16(value<<1))
+		cpu.Registers.F.ProcessFlags(Flags{Zero: value<<1 == 0, Carry: value>>7 == 1}, opcode.Flags)
 
 	case "RL":
-		value := cpu.Registers.F.RotateLeftWriteCarry(byte(cpu.GetOperand(opcode.Operands[0])))
-		cpu.SetOperand(opcode.Operands[0], uint16(value))
+		value := byte(cpu.GetOperand(opcode.Operands[0]))
+		result := (value << 1) | BoolToByte(cpu.Registers.F.Carry)
+		cpu.SetOperand(opcode.Operands[0], uint16(result))
+		cpu.Registers.F.ProcessFlags(Flags{Zero: value<<1 == 0, Carry: value>>7 == 1}, opcode.Flags)
+
+	case "RLA":
+		value := cpu.Registers.A
+		cpu.Registers.A = (value << 1) | BoolToByte(cpu.Registers.F.Carry)
+		cpu.Registers.F.ProcessFlags(Flags{Carry: value>>7 == 1}, opcode.Flags)
 
 	case "RLC":
-		cpu.Registers.F.Carry = cpu.GetOperand(opcode.Operands[0])&0x80 == 0x80
-		value := cpu.Registers.F.RotateLeftWriteCarry(byte(cpu.GetOperand(opcode.Operands[0])))
-		cpu.SetOperand(opcode.Operands[0], uint16(value))
+		value := cpu.GetOperand(opcode.Operands[0])
+		result := value<<1 | value>>7
+		cpu.SetOperand(opcode.Operands[0], uint16(result))
+		cpu.Registers.F.ProcessFlags(Flags{Zero: result == 0, Carry: value>>7 == 1}, opcode.Flags)
+
+	case "RLCA":
+		value := cpu.Registers.A
+		cpu.Registers.A = value<<1 | value>>7
+		cpu.Registers.F.ProcessFlags(Flags{Carry: value>>7 == 1}, opcode.Flags)
+
+	case "SCF":
+		cpu.Registers.F.ProcessFlags(Flags{}, opcode.Flags)
+
+	case "CCF":
+		cpu.Registers.F.ProcessFlags(Flags{Carry: !cpu.Registers.F.Carry}, opcode.Flags)
+
+	case "DI":
+		cpu.EnableInterrupts = false
+
+	case "EI":
+		cpu.EnableInterrupts = true
 
 	default:
 		log.Printf("unimplemented opcode %s: %s", opcode.Hex, opcode.Mnemonic)

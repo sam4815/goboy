@@ -16,18 +16,21 @@ type MBC1Registers struct {
 }
 
 type MMU struct {
-	Gameboy       *Gameboy
-	ROM           []byte
-	ExternalRAM   []byte
-	WorkRAM       []byte
-	HighRAM       []byte
-	OAM           []byte
-	ROMOffset     uint16
-	RAMOffset     uint16
-	Keys          byte
-	Interrupt     byte
-	BankingMode   BankingMode
-	MBC1Registers MBC1Registers
+	Gameboy        *Gameboy
+	ROM            []byte
+	ExternalRAM    []byte
+	WorkRAM        []byte
+	HighRAM        []byte
+	OAM            []byte
+	Audio          []byte
+	IO             []byte
+	ROMOffset      uint16
+	RAMOffset      uint16
+	Keys           byte
+	Interrupt      byte
+	BankingMode    BankingMode
+	MBC1Registers  MBC1Registers
+	AllowROMWrites bool
 }
 
 func (mmu *MMU) InitializeIO() {
@@ -88,6 +91,8 @@ func NewMMU(bytes []byte) *MMU {
 		WorkRAM:     make([]byte, 8192),
 		HighRAM:     make([]byte, 8192),
 		OAM:         make([]byte, 160),
+		Audio:       make([]byte, 48),
+		IO:          make([]byte, 64),
 		ROMOffset:   0x0000,
 	}
 	copy(mmu.ROM, bytes)
@@ -135,8 +140,14 @@ func (mmu MMU) ReadByte(address uint16) byte {
 				case 0x00:
 					return mmu.Keys
 				}
+			case 0x10, 0x20, 0x30:
+				return mmu.Audio[address&0x2F]
 			case 0x40, 0x50, 0x60, 0x70:
-				return mmu.Gameboy.GPU.ReadRegisters(address)
+				if address&0xF0 <= 0x44 {
+					return mmu.Gameboy.GPU.ReadRegisters(address)
+				} else {
+					return mmu.IO[address&0x3F]
+				}
 			case 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0:
 				return mmu.HighRAM[address&0x7F]
 			case 0xF0:
@@ -223,7 +234,10 @@ func (mmu *MMU) WriteByte(address uint16, value byte) {
 				case 0x00:
 					mmu.Keys = value
 				}
+			case 0x10, 0x20, 0x30:
+				mmu.Audio[address&0x2F] = value
 			case 0x40, 0x50, 0x60, 0x70:
+				mmu.IO[address&0x3F] = value
 				mmu.Gameboy.GPU.WriteRegisters(address, value)
 			case 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0:
 				mmu.HighRAM[address&0x7F] = value
@@ -236,6 +250,10 @@ func (mmu *MMU) WriteByte(address uint16, value byte) {
 				}
 			}
 		}
+	}
+
+	if address < 0x8000 && mmu.AllowROMWrites {
+		mmu.ROM[address] = value
 	}
 }
 
